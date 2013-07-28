@@ -8,7 +8,6 @@ sentry_groveio.models
 
 from django import forms
 
-from sentry.conf import settings
 from sentry.plugins import Plugin
 
 import urllib
@@ -59,7 +58,7 @@ class GroveIoPlugin(Plugin):
         values = {
             'service': service,
             'message': message,
-            'url': '%s/%d/group/%d/' % (settings.URL_PREFIX, group.project_id, group.id),
+            'url': group.get_absolute_url(),
             'icon_url': self.get_option('icon_url', event.project)
         }
 
