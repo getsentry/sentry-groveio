@@ -6,14 +6,16 @@ sentry_groveio.models
 :license: BSD, see LICENSE for more details.
 """
 
-from django import forms
-
-from sentry.plugins import Plugin
+from __future__ import absolute_import
 
 import urllib
 import urllib2
 import logging
+
+from django import forms
 from django.utils import simplejson as json
+
+from sentry.plugins.bases import notify
 
 logger = logging.getLogger('sentry.plugins.groveio')
 
