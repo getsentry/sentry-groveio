@@ -8,12 +8,12 @@ sentry_groveio.models
 
 from __future__ import absolute_import
 
+import json
 import urllib
 import urllib2
 import logging
 
 from django import forms
-from django.utils import simplejson as json
 
 from sentry.plugins.bases import notify
 
