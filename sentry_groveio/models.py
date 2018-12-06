@@ -46,7 +46,7 @@ class GroveIoPlugin(notify.NotificationPlugin):
     def is_configured(self, project):
         return all((self.get_option(k, project) for k in ('token', 'service_name')))
 
-    def notify_users(self, group, event, fail_silently=False):
+    def notify_users(self, group, event, fail_silently=False, **kwargs):
         token = self.get_option('token', event.project)
         service = self.get_option('service_name', event.project)
         message = '[%s] %s: %s' % (event.server_name, event.get_level_display().upper(), event.error().encode('utf-8').split('\n')[0])
